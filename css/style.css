@@ -101,7 +101,6 @@ a {
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 2px;
-    border-bottom: 1px solid #777; /* The thin line under skill text */
     display: inline-block;
     padding-right: 5px;
 }
