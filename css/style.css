@@ -72,13 +72,13 @@ a {
 .contact-item i {
     background-color: #222;
     color: white;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 11px;
+    font-size: 18px;
     flex-shrink: 0;
 }
 
