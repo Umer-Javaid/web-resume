@@ -10,7 +10,6 @@ body {
     background-color: #555; /* Dark background outside the paper like the screenshot */
     display: flex;
     justify-content: center;
-    padding: 20px 0;
     color: #333;
     line-height: 1.5;
 }
@@ -273,4 +272,25 @@ strong {
     text-decoration: underline;
     color: #2c5e9e;
     display: block;
+}
+
+/* =========================================
+   PRINT STYLES (Add to bottom of style.css)
+   ========================================= */
+@media print {
+    /* 1. FORCE BACKGROUND COLORS */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+	
+	/* 2. PAGE SETUP (A4/Legal Compatibility) */
+    @page {
+        margin: 0; /* Removes browser header/footer text */
+        size: auto; /* Adapts to A4 or Legal selected in printer dialog */
+    }
+	
+    body {
+        background-color: white; /* Save ink on the edges */
+	}
 }
