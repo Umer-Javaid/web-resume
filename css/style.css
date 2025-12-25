@@ -69,7 +69,8 @@ a {
     gap: 12px;
 }
 
-.contact-item i {
+.contact-item i,
+.contact-item .icon-circle {
     background-color: #222;
     color: white;
     width: 28px;
