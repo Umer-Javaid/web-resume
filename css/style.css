@@ -154,6 +154,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
     width: 60px;         /* FIXED WIDTH for the "Dedicated Region" */
     height: 60px;        /* FIXED HEIGHT */
     border-radius: 5px;  /* Slight rounded corners looks professional */
+    overflow: hidden;    /* This forces the inner image to respect the border-radius */
     display: flex;
     justify-content: center;
     align-items: center;
