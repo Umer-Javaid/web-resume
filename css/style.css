@@ -159,7 +159,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
     justify-content: center;
     align-items: center;
     padding: 0px;        /* Tiny padding so logo doesn't touch edges */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Optional: subtle shadow */
     flex-shrink: 0;      /* Prevents logo from getting squashed */
 }
 
