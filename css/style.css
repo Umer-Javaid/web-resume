@@ -21,7 +21,7 @@ body {
     max-width: 100%;
     display: grid;
     grid-template-columns: 320px 1fr; /* Exact approximate ratio from image */
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
     min-height: 1100px;
 }
 
@@ -32,8 +32,8 @@ body {
     color: #000;
 }
 
-.header-section {
-    margin-bottom: 30px;
+.sidebar-section {
+    margin-bottom: 20px;
 }
 
 .header-section h1 {
@@ -54,7 +54,6 @@ body {
 /* Contact Info */
 .contact-section {
     font-size: 13px;
-    margin-bottom: 30px;
 }
 
 .contact-item {
