@@ -308,4 +308,19 @@ strong {
     body {
         background-color: white; /* Save ink on the edges */
     }
+    
+    /* 1. DEFAULT RULE: Keep sections intact */
+    /* This applies to Skills, Education, Awards, etc. 
+       If they don't fit, they jump to the next page. */
+    .sidebar-section {
+        break-inside: avoid; /* Modern Standard */
+        page-break-inside: avoid; /* For older browsers */
+    }
+    
+    /* 2. EXCEPTION: Allow Certifications to break */
+    /* This overrides the default because it's more specific or defined later. */
+    .sidebar-section.cert-section {
+        break-inside: auto;
+        page-break-inside: auto;
+    }
 }
