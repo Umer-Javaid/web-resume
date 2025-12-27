@@ -86,7 +86,7 @@ body {
 
 .sidebar-hr {
     border: none; /* Removes default browser <hr> styling */
-    height: 2px;
+    height: 1px;
     background-color: #E6E6E6;
     margin-top: 5px; /* Creates the space between the heading and the line */
     margin-bottom: 15px; /* Matches the original spacing */
