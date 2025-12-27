@@ -28,7 +28,7 @@ body {
 /* LEFT SIDEBAR STYLING */
 .sidebar {
     background-color: #BCD6ED; /* The light blue-gray from the image */
-    padding: 40px 25px;
+    padding: 40px 20px;
     color: #000;
 }
 
@@ -195,7 +195,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 /* RIGHT CONTENT STYLING */
 .main-content {
     background-color: #fff;
-    padding: 40px;
+    padding: 40px 20px;
 }
 
 .main-content h3 {
@@ -203,6 +203,10 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+.main-section {
+    margin-bottom: 20px;
 }
 
 .main-content-hr {
@@ -217,7 +221,6 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .objective-text {
     font-size: 14px;
     text-align: justify;
-    margin-bottom: 30px;
 }
 
 .separator {
