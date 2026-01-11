@@ -7,18 +7,21 @@
 
 :root {
   --theme-color-table-bg: #555; /* Background outside the papaer (table) */
-  --theme-color-sidebar-bg: #bcd6ed; /* light blue-gray */
-  --theme-color-sidebar-bg-accent1: #222; /* almost black */
+  --theme-color-sidebar-bg: #bcd6ed; /* Light blue-gray */
+  --theme-color-sidebar-bg-accent1: #222; /* Almost black */
   --theme-color-sidebar-bg-accent2: #e6e6e6; /* Platinum color */
-  --theme-color-main-content-bg: #fff;
+  --theme-color-main-content-bg: #fff;  /* White */
+  --theme-color-main-content-bg-accent1: #e6e6e6; /* Platinum color */
 
-  --theme-color-sidebar-text-primary: #000;
-  --theme-color-sidebar-text-accent1: #444;
-  --theme-color-main-content-text-primary: #000;
+  --theme-color-sidebar-text-primary: #000; /* Black */
+  --theme-color-sidebar-text-accent1: #444; /* Grey */
+  --theme-color-main-content-text-primary: #000;  /* Black */
+  --theme-color-main-content-text-accent1: #444; /* Grey */
+  --theme-color-main-content-text-accent2: #2c5e9e; /* Dark Blue */
 }
 
-.color-blue {
-  color: var(--theme-color-blue);
+.theme-color-main-content-text-accent2 {
+  color: var(--theme-color-main-content-text-accent2);
 }
 
 body {
@@ -210,7 +213,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 /* RIGHT CONTENT STYLING */
 .main-content {
-    background-color: #fff;
+    background-color: var(theme-color-main-content-bg);
     padding: 40px 20px;
 }
 
@@ -228,13 +231,14 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .main-content-hr {
     border: none; /* Removes default browser <hr> styling */
     height: 1px;
-    background-color: #E6E6E6;
+    background-color: var(--theme-color-main-content-bg-accent1);
     margin-top: 5px; /* Creates the space between the heading and the line */
     margin-bottom: 15px; /* Matches the original spacing */
     width: 100%; /* Makes the line span the full width of its container */
 }
 
 .objective-text {
+    color: var(--theme-color-main-content-text-accent1);
     font-size: 14px;
     text-align: justify;
 }
@@ -260,7 +264,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .job-header .company {
     font-style: italic;
     font-size: 14px;
-    color: #444;
+    color: var(--theme-color-main-content-text-primary);
     margin-bottom: 10px;
 }
 
@@ -273,15 +277,14 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 .job-list > li {
     margin-bottom: 8px;
-    color: #2c5e9e; /* Blue color for main bullets if desired, or black */
-    color: #333;
+    color: var(--theme-color-main-content-text-accent1);
 }
 
 .job-list ul {
     list-style-type: circle;
     margin-left: 20px;
     margin-top: 5px;
-    color: #444;
+    color: var(--theme-color-main-content-text-accent1);
 }
 
 .job-list ul li {
