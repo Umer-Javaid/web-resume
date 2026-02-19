@@ -1,0 +1,347 @@
+/* GENERAL RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  --theme-color-table-bg: #555; /* Background outside the papaer (table) */
+  --theme-color-sidebar-bg: #bcd6ed; /* Light blue-gray */
+  --theme-color-sidebar-bg-accent1: #222; /* Almost black */
+  --theme-color-sidebar-bg-accent2: #e6e6e6; /* Platinum color */
+  --theme-color-main-content-bg: #fff;  /* White */
+  --theme-color-main-content-bg-accent1: #e6e6e6; /* Platinum color */
+
+  --theme-color-sidebar-text-primary: #000; /* Black */
+  --theme-color-sidebar-text-accent1: #444; /* Grey */
+  --theme-color-main-content-text-primary: #000;  /* Black */
+  --theme-color-main-content-text-accent1: #444; /* Grey */
+  --theme-color-main-content-text-accent2: #2c5e9e; /* Dark Blue */
+}
+
+.theme-color-main-content-text-accent2 {
+  color: var(--theme-color-main-content-text-accent2);
+}
+
+body {
+    font-family: "Open Sans";
+    background-color: var(--theme-color-table-bg);
+    display: flex;
+    justify-content: center;
+    color: var(--theme-color-main-content-text-primary);
+    line-height: 1.5;
+}
+
+/* THE PAPER PAGE */
+.resume-container {
+    background-color: var(--theme-color-main-content-bg);
+    width: 1000px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Exact approximate ratio from image */
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
+    min-height: 1100px;
+}
+
+/* LEFT SIDEBAR STYLING */
+.sidebar {
+    background-color: var(--theme-color-sidebar-bg);
+    padding: 40px 20px;
+    color: var(--theme-color-sidebar-text-primary);
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.header-section h1 {
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.header-section h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Contact Info */
+.contact-section {
+    font-size: 13px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    margin-bottom: 10px;
+    gap: 12px;
+}
+
+.contact-item i,
+.contact-item .icon-circle {
+    background-color: var(--theme-color-sidebar-bg-accent1);
+    color: var(--theme-color-sidebar-bg-accent2);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* Sidebar Headings */
+.sidebar h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-hr {
+    border: none; /* Removes default browser <hr> styling */
+    height: 1px;
+    background-color: var(--theme-color-sidebar-bg-accent2);
+    margin-top: 5px; /* Creates the space between the heading and the line */
+    margin-bottom: 15px; /* Matches the original spacing */
+    width: 100%; /* Makes the line span the full width of its container */
+}
+
+/* Skills */
+.skill-box {
+    margin-bottom: 12px;
+}
+
+.skill-box p {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--theme-color-sidebar-bg-accent2); /* Lighter shade for empty part */
+    margin-top: 2px;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    background-color: var(--theme-color-sidebar-bg-accent1); /* Dark fill color */ 
+}
+
+/* Education & Awards */
+.edu-item {
+    margin-bottom: 15px;
+}
+
+.edu-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.edu-item .university {
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.edu-item .date {
+    font-size: 12px;
+    color: var(--theme-color-sidebar-text-accent1);
+}
+
+/* Certification Section Styling
+CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
+.cert-item {
+    display: flex;
+    gap: 12px;           /* Space between logo and text */
+    margin-bottom: 20px; /* Space between different certifications */
+    align-items: flex-start; /* Aligns text to top of logo */
+}
+
+/* LEFT: The Image Container */
+.cert-logo-wrapper {
+    width: 60px;         /* FIXED WIDTH for the "Dedicated Region" */
+    height: 60px;        /* FIXED HEIGHT */
+    border-radius: 5px;  /* Slight rounded corners looks professional */
+    overflow: hidden;    /* This forces the inner image to respect the border-radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;        /* Tiny padding so logo doesn't touch edges */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+    flex-shrink: 0;      /* Prevents logo from getting squashed */
+}
+
+/* THE IMAGE ITSELF */
+.cert-logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* MAGIC: Resizes image to fit without cutting it */
+}
+
+/* RIGHT: The Text Content */
+.cert-content {
+    flex: 1; /* Takes up all remaining space */
+}
+
+/* Line 1: Heading */
+.cert-content h5 {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+/* Line 2: Awarded By */
+.cert-issuer {
+    font-size: 12px;
+    color: var(--theme-color-sidebar-text-accent1);
+    font-style: italic;
+}
+
+/* Line 3: Credentials */
+.cert-content .cred-link {
+    font-size: 9px;
+}
+
+/* RIGHT CONTENT STYLING */
+.main-content {
+    background-color: var(theme-color-main-content-bg);
+    padding: 40px 20px;
+}
+
+.main-content h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.main-section {
+    margin-bottom: 20px;
+}
+
+.main-content-hr {
+    border: none; /* Removes default browser <hr> styling */
+    height: 1px;
+    background-color: var(--theme-color-main-content-bg-accent1);
+    margin-top: 5px; /* Creates the space between the heading and the line */
+    margin-bottom: 15px; /* Matches the original spacing */
+    width: 100%; /* Makes the line span the full width of its container */
+}
+
+.objective-text {
+    color: var(--theme-color-main-content-text-accent1);
+    font-size: 14px;
+    text-align: justify;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+/* Job Experience Blocks */
+.job-block {
+    margin-bottom: 25px;
+}
+
+.job-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.job-header .company {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--theme-color-main-content-text-primary);
+    margin-bottom: 10px;
+}
+
+/* Lists */
+.job-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.job-list > li {
+    margin-bottom: 8px;
+    color: var(--theme-color-main-content-text-accent1);
+}
+
+.job-list ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    margin-top: 5px;
+    color: var(--theme-color-main-content-text-accent1);
+}
+
+.job-list ul li {
+    margin-bottom: 3px;
+}
+
+/* Blue text highlighting matching the PDF */
+strong {
+    font-weight: 700;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
+    .sidebar {
+        padding: 30px;
+    }
+    
+    .main-content {
+        padding: 30px;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    /* 1. FORCE BACKGROUND COLORS */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* 2. PAGE SETUP (A4/Legal Compatibility) */
+    @page {
+        margin: 0; /* Removes browser header/footer text */
+        size: auto; /* Adapts to A4 or Legal selected in printer dialog */
+    }
+    
+    body {
+        background-color: white; /* Save ink on the edges */
+    }
+    
+    /* 1. DEFAULT RULE: Keep sections intact */
+    /* This applies to Skills, Education, Awards, etc. 
+       If they don't fit, they jump to the next page. */
+    .sidebar-section {
+        break-inside: avoid; /* Modern Standard */
+        page-break-inside: avoid; /* For older browsers */
+    }
+    
+    /* 2. EXCEPTION: Allow Certifications to break */
+    /* This overrides the default because it's more specific or defined later. */
+    .sidebar-section.cert-section {
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+}
