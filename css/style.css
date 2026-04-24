@@ -20,6 +20,10 @@
   --theme-color-main-content-text-accent2: #2c5e9e; /* Dark Blue */
 }
 
+.theme-color-main-content-text-bg {
+  color: var(--theme-color-main-content-bg);
+}
+
 .theme-color-main-content-text-accent2 {
   color: var(--theme-color-main-content-text-accent2);
 }
@@ -213,7 +217,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 /* RIGHT CONTENT STYLING */
 .main-content {
-    background-color: var(theme-color-main-content-bg);
+    background-color: var(--theme-color-main-content-bg);
     padding: 40px 20px;
 }
 
