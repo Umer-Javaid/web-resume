@@ -6,6 +6,8 @@
 }
 
 :root {
+    --scale-factor: 1; /* Scale factor (Zoom level) decimal 1 for 100% */
+
     --theme-color-table-bg: #555; /* Background outside the papaer (table) */
     --theme-color-sidebar-bg: #bcd6ed; /* Light blue-gray */
     --theme-color-sidebar-bg-accent1: #222; /* Almost black */
@@ -39,13 +41,14 @@ body {
 
 /* THE PAPER PAGE */
 .resume-container {
+    /* A4 size Width: 210mm (or 794px) Height: 297mm (or 1123px). CSS Default DPI 96 */
     background-color: var(--theme-color-main-content-bg);
-    width: 1000px;
+    width: 794px;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 320px 1fr; /* Exact approximate ratio from image */
+    grid-template-columns: 270px 1fr; /* 34% of total A4 size (roughly 1:2 split) */
     /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
-    min-height: 1100px;
+    min-height: 1123px;
 }
 
 /* LEFT SIDEBAR STYLING */
@@ -62,21 +65,21 @@ body {
 .header-section h1 {
     font-weight: 400;
     letter-spacing: 2px;
-    font-size: 28px;
+    font-size: calc(24px * var(--scale-factor));
     line-height: 1.2;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .header-section h2 {
-    font-size: 16px;
+    font-size: calc(14px * var(--scale-factor));
     font-weight: 400;
     margin-top: 5px;
 }
 
 /* Contact Info */
 .contact-section {
-    font-size: 13px;
+    font-size: calc(11px * var(--scale-factor));
 }
 
 .contact-item {
@@ -96,13 +99,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: calc(18px * var(--scale-factor));
     flex-shrink: 0;
 }
 
 /* Sidebar Headings */
 .sidebar h3 {
-    font-size: 16px;
+    font-size: calc(14px * var(--scale-factor));
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -122,7 +125,7 @@ body {
 }
 
 .skill-box p {
-    font-size: 13px;
+    font-size: calc(11px * var(--scale-factor));
     font-weight: 500;
     margin-bottom: 2px;
     display: inline-block;
@@ -147,18 +150,18 @@ body {
 }
 
 .edu-item h4 {
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
     font-weight: 700;
 }
 
 .edu-item .university {
-    font-size: 13px;
+    font-size: calc(11px * var(--scale-factor));
     font-style: italic;
     margin-bottom: 2px;
 }
 
 .edu-item .date {
-    font-size: 12px;
+    font-size: calc(10px * var(--scale-factor));
     color: var(--theme-color-sidebar-text-accent1);
 }
 
@@ -199,20 +202,20 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 /* Line 1: Heading */
 .cert-content h5 {
-    font-size: 15px;
+    font-size: calc(12px * var(--scale-factor));
     margin-bottom: 3px;
 }
 
 /* Line 2: Awarded By */
 .cert-issuer {
-    font-size: 12px;
+    font-size: calc(10px * var(--scale-factor));
     color: var(--theme-color-sidebar-text-accent1);
     font-style: italic;
 }
 
 /* Line 3: Credentials */
 .cert-content .cred-link {
-    font-size: 9px;
+    font-size: calc(8px * var(--scale-factor));
 }
 
 /* RIGHT CONTENT STYLING */
@@ -223,7 +226,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 .main-content h3 {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: calc(15px * var(--scale-factor));
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -243,7 +246,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 .objective-text {
     color: var(--theme-color-main-content-text-accent1);
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
     text-align: justify;
 }
 
@@ -260,14 +263,14 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 }
 
 .job-header h4 {
-    font-size: 16px;
+    font-size: calc(13px * var(--scale-factor));
     font-weight: 700;
     margin-bottom: 2px;
 }
 
 .job-header .company {
     font-style: italic;
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
     color: var(--theme-color-main-content-text-primary);
     margin-bottom: 10px;
 }
@@ -276,7 +279,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .job-list {
     list-style-type: disc;
     margin-left: 20px;
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
 }
 
 .job-list > li {
