@@ -6,6 +6,8 @@
 }
 
 :root {
+    --scale-factor: 1; /* Scale factor (Zoom level) decimal 1 for 100% */
+
     --theme-color-table-bg: #555; /* Background outside the papaer (table) */
     --theme-color-sidebar-bg: #bcd6ed; /* Light blue-gray */
     --theme-color-sidebar-bg-accent1: #222; /* Almost black */
@@ -39,13 +41,14 @@ body {
 
 /* THE PAPER PAGE */
 .resume-container {
+    /* A4 size Width: 210mm (or 794px) Height: 297mm (or 1123px). CSS Default DPI 96 */
     background-color: var(--theme-color-main-content-bg);
-    width: 1000px;
+    width: 794px;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 320px 1fr; /* Exact approximate ratio from image */
+    grid-template-columns: 270px 1fr; /* 34% of total A4 size (roughly 1:2 split) */
     /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
-    min-height: 1100px;
+    min-height: 1123px;
 }
 
 /* LEFT SIDEBAR STYLING */
@@ -62,21 +65,21 @@ body {
 .header-section h1 {
     font-weight: 400;
     letter-spacing: 2px;
-    font-size: 28px;
+    font-size: calc(24px * var(--scale-factor));
     line-height: 1.2;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .header-section h2 {
-    font-size: 16px;
+    font-size: calc(14px * var(--scale-factor));
     font-weight: 400;
     margin-top: 5px;
 }
 
 /* Contact Info */
 .contact-section {
-    font-size: 13px;
+    font-size: calc(11px * var(--scale-factor));
 }
 
 .contact-item {
@@ -86,23 +89,23 @@ body {
     gap: 12px;
 }
 
-.contact-item i,
-.contact-item .icon-circle {
-    background-color: var(--theme-color-sidebar-bg-accent1);
-    color: var(--theme-color-sidebar-bg-accent2);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    flex-shrink: 0;
-}
+    .contact-item i,
+    .contact-item .icon-circle {
+        background-color: var(--theme-color-sidebar-bg-accent1);
+        color: var(--theme-color-sidebar-bg-accent2);
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: calc(18px * var(--scale-factor));
+        flex-shrink: 0;
+    }
 
 /* Sidebar Headings */
 .sidebar h3 {
-    font-size: 16px;
+    font-size: calc(14px * var(--scale-factor));
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -121,13 +124,13 @@ body {
     margin-bottom: 12px;
 }
 
-.skill-box p {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 2px;
-    display: inline-block;
-    padding-right: 5px;
-}
+    .skill-box p {
+        font-size: calc(11px * var(--scale-factor));
+        font-weight: 500;
+        margin-bottom: 2px;
+        display: inline-block;
+        padding-right: 5px;
+    }
 
 .progress-bar {
     width: 100%;
@@ -136,83 +139,83 @@ body {
     margin-top: 2px;
 }
 
-.progress-bar .fill {
-    height: 100%;
-    background-color: var(--theme-color-sidebar-bg-accent1); /* Dark fill color */ 
-}
+    .progress-bar .fill {
+        height: 100%;
+        background-color: var(--theme-color-sidebar-bg-accent1); /* Dark fill color */
+    }
 
 /* Education & Awards */
 .edu-item {
     margin-bottom: 15px;
 }
 
-.edu-item h4 {
-    font-size: 14px;
-    font-weight: 700;
-}
+    .edu-item h4 {
+        font-size: calc(12px * var(--scale-factor));
+        font-weight: 700;
+    }
 
-.edu-item .university {
-    font-size: 13px;
-    font-style: italic;
-    margin-bottom: 2px;
-}
+    .edu-item .university {
+        font-size: calc(11px * var(--scale-factor));
+        font-style: italic;
+        margin-bottom: 2px;
+    }
 
-.edu-item .date {
-    font-size: 12px;
-    color: var(--theme-color-sidebar-text-accent1);
-}
+    .edu-item .date {
+        font-size: calc(10px * var(--scale-factor));
+        color: var(--theme-color-sidebar-text-accent1);
+    }
 
 /* Certification Section Styling
 CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .cert-item {
     display: flex;
-    gap: 12px;           /* Space between logo and text */
+    gap: 8px; /* Space between logo and text */
     margin-bottom: 20px; /* Space between different certifications */
     align-items: flex-start; /* Aligns text to top of logo */
 }
 
 /* LEFT: The Image Container */
 .cert-logo-wrapper {
-    width: 60px;         /* FIXED WIDTH for the "Dedicated Region" */
-    height: 60px;        /* FIXED HEIGHT */
-    border-radius: 5px;  /* Slight rounded corners looks professional */
-    overflow: hidden;    /* This forces the inner image to respect the border-radius */
+    width: 60px; /* FIXED WIDTH for the "Dedicated Region" */
+    height: 60px; /* FIXED HEIGHT */
+    border-radius: 5px; /* Slight rounded corners looks professional */
+    overflow: hidden; /* This forces the inner image to respect the border-radius */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px;        /* Tiny padding so logo doesn't touch edges */
+    padding: 0px; /* Tiny padding so logo doesn't touch edges */
     /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Optional: subtle shadow */
-    flex-shrink: 0;      /* Prevents logo from getting squashed */
+    flex-shrink: 0; /* Prevents logo from getting squashed */
 }
 
-/* THE IMAGE ITSELF */
-.cert-logo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* MAGIC: Resizes image to fit without cutting it */
-}
+    /* THE IMAGE ITSELF */
+    .cert-logo-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* MAGIC: Resizes image to fit without cutting it */
+    }
 
 /* RIGHT: The Text Content */
 .cert-content {
     flex: 1; /* Takes up all remaining space */
 }
 
-/* Line 1: Heading */
-.cert-content h5 {
-    font-size: 15px;
-    margin-bottom: 3px;
-}
+    /* Line 1: Heading */
+    .cert-content h5 {
+        font-size: calc(12px * var(--scale-factor));
+        margin-bottom: 3px;
+    }
 
 /* Line 2: Awarded By */
 .cert-issuer {
-    font-size: 12px;
+    font-size: calc(10px * var(--scale-factor));
     color: var(--theme-color-sidebar-text-accent1);
     font-style: italic;
 }
 
 /* Line 3: Credentials */
 .cert-content .cred-link {
-    font-size: 9px;
+    font-size: calc(8px * var(--scale-factor));
 }
 
 /* RIGHT CONTENT STYLING */
@@ -221,12 +224,12 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
     padding: 40px 20px;
 }
 
-.main-content h3 {
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
+    .main-content h3 {
+        text-transform: uppercase;
+        font-size: calc(15px * var(--scale-factor));
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
 
 .main-section {
     margin-bottom: 20px;
@@ -243,7 +246,7 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 
 .objective-text {
     color: var(--theme-color-main-content-text-accent1);
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
     text-align: justify;
 }
 
@@ -260,14 +263,14 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 }
 
 .job-header h4 {
-    font-size: 16px;
+    font-size: calc(13px * var(--scale-factor));
     font-weight: 700;
     margin-bottom: 2px;
 }
 
 .job-header .company {
     font-style: italic;
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
     color: var(--theme-color-main-content-text-primary);
     margin-bottom: 10px;
 }
@@ -276,24 +279,24 @@ CONTAINER: Flexbox to separate Left (Image) and Right (Text) */
 .job-list {
     list-style-type: disc;
     margin-left: 20px;
-    font-size: 14px;
+    font-size: calc(12px * var(--scale-factor));
 }
 
-.job-list > li {
-    margin-bottom: 8px;
-    color: var(--theme-color-main-content-text-accent1);
-}
+    .job-list > li {
+        margin-bottom: 8px;
+        color: var(--theme-color-main-content-text-accent1);
+    }
 
-.job-list ul {
-    list-style-type: circle;
-    margin-left: 20px;
-    margin-top: 5px;
-    color: var(--theme-color-main-content-text-accent1);
-}
+    .job-list ul {
+        list-style-type: circle;
+        margin-left: 20px;
+        margin-top: 5px;
+        color: var(--theme-color-main-content-text-accent1);
+    }
 
-.job-list ul li {
-    margin-bottom: 3px;
-}
+        .job-list ul li {
+            margin-bottom: 3px;
+        }
 
 /* Blue text highlighting matching the PDF */
 strong {
@@ -306,11 +309,11 @@ strong {
         grid-template-columns: 1fr;
         width: 100%;
     }
-    
+
     .sidebar {
         padding: 30px;
     }
-    
+
     .main-content {
         padding: 30px;
     }
@@ -323,17 +326,17 @@ strong {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
-    
+
     /* 2. PAGE SETUP (A4/Legal Compatibility) */
     @page {
         margin: 0; /* Removes browser header/footer text */
         size: auto; /* Adapts to A4 or Legal selected in printer dialog */
     }
-    
+
     body {
         background-color: white; /* Save ink on the edges */
     }
-    
+
     /* 1. DEFAULT RULE: Keep sections intact */
     /* This applies to Skills, Education, Awards, etc. 
        If they don't fit, they jump to the next page. */
@@ -341,11 +344,11 @@ strong {
         break-inside: avoid; /* Modern Standard */
         page-break-inside: avoid; /* For older browsers */
     }
-    
-    /* 2. EXCEPTION: Allow Certifications to break */
-    /* This overrides the default because it's more specific or defined later. */
-    .sidebar-section.cert-section {
-        break-inside: auto;
-        page-break-inside: auto;
-    }
+
+        /* 2. EXCEPTION: Allow Certifications to break */
+        /* This overrides the default because it's more specific or defined later. */
+        .sidebar-section.cert-section {
+            break-inside: auto;
+            page-break-inside: auto;
+        }
 }
